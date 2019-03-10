@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prime Calculator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <link rel="stylesheet" href="css/toggles.css">
+  </head>
+  <body>
+    <h1>Prime Calculator</h1>
+    <span class="input input--haruki">
+      <input class="input__field input__field--haruki" type="text" id="input-1"/>
+      <label class="input__label input__label--haruki" for="input-1">
+        <span class="input__label-content input__label-content--haruki">&#35; of Primes</span>
+      </label>
+    </span>
+    <div class="toggle-container">
+      <input id="toggle-wasm" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+      <label for="toggle-wasm" class="selbtn">WASM</label>
+      <input id="toggle-js" class="toggle toggle-right" name="toggle" value="true" type="radio">
+      <label for="toggle-js" class="selbtn">JS</label>
+      <div id="settings-button">
+        <i class="fas fa-cog"></i>
+      </div>
+    </div>
+    <button class="btn btn-1 btn-1a">Calculate</button>
+    <br><br>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+    <p id="time-info"></p>
+    <br><br>
+    <div id="list-container">
+      <span id="list"></span>
+    </div>
+    <!-- Dialog -->
+    <div class="dialog-container" id="diag-con">
+      <div class="dialog">
+        <span class="dialog__close">✕</span>
+        <h2 class="dialog__title">Advanced</h2>
+        <div class="dialog__content diag">
+          <div class="diag diag-input-container">
+            <p>By default, primes are generated starting at 0. You may specify a different starting number using the field below.</p>
+            <span class="input input--haruki diag">
+              <input class="input__field input__field--haruki diag" type="text" id="starting-number-input"/>
+              <label class="input__label input__label--haruki diag" for="starting-number-input">
+                <span class="input__label-content input__label-content--haruki diag">Starting #</span>
+              </label>
+            </span>
+          </div>
+          <div class="dl-toggle-container">
+            <p>By default, smaller numbers of primes will be rendered inline, while larger ones will be stored in a file for download. You may use the following options to force inline display or download. Note that enabling "Display" mode when generating large numbers of primes may slow, hang, or crash your browser.</p>
+            <input id="dl-toggle-auto" class="diag toggle toggle-left pos-self" name="dl-toggle" value="auto" type="radio" checked>
+            <label for="dl-toggle-auto" class="diag selbtn">Auto</label>
+            <input id="dl-toggle-dl" class="diag toggle toggle-center pos-left-1" name="dl-toggle" value="download" type="radio">
+            <label for="dl-toggle-dl" class="diag selbtn">Download</label>
+            <input id="dl-toggle-display" class="diag toggle toggle-right pos-left-2" name="dl-toggle" value="display" type="radio">
+            <label for="dl-toggle-display" class="diag selbtn">Display</label>
+          </div>
+          <div class="toggle-container">
+            <p>WASM uses 32-bit integers by default to achieve optimal performance. You may enable 64-bit mode to mitigate overflow at a considerable performance tradeoff.</p>
+            <input id="wasm-mode-toggle-32" class="diag toggle toggle-left" name="wasm-mode-toggle" value="32" type="radio" checked>
+            <label for="wasm-mode-toggle-32" class="diag selbtn">WASM32</label>
+            <input id="wasm-mode-toggle-64" class="diag toggle toggle-right" name="wasm-mode-toggle" value="64" type="radio">
+            <label for="wasm-mode-toggle-64" class="diag selbtn">WASM64</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="darkener"></div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
