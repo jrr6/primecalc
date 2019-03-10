@@ -6,8 +6,8 @@ let wasmWorker
 if (!window.Worker) {
   alert('Your web browser does not support WebWorkers and will therefore be unable to run this website.')
 } else {
-  jsWorker = new Worker('/js/jsWorker.js')
-  wasmWorker = new Worker('/js/wasmWorker.js')
+  jsWorker = new Worker('js/jsWorker.js')
+  wasmWorker = new Worker('js/wasmWorker.js')
 
   jsWorker.onmessage = wasmWorker.onmessage = (e) => {
     let primes = e.data.primes
