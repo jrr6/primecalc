@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "compileWasm",
-      "command": "emcc primes.c -o js/wasmprimes.js -s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\"]' -s ALLOW_MEMORY_GROWTH=1",
+      "command": "emcc -O3 primes.c -o js/wasmprimes.js -s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\"]' -s ALLOW_MEMORY_GROWTH=1",
       "type": "shell",
       "group": {
         "kind": "build",
