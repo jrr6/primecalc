@@ -160,9 +160,9 @@ function toggleDarkMode () {
   let html = $('html')
   if (html.classList.contains('dark')) {
     html.classList.remove('dark')
-    localStorage['darkMode'] = false
+    localStorage['colorMode'] = 'light'
   } else {
     html.classList.add('dark')
-    localStorage['darkMode'] = true
+    localStorage['colorMode'] = 'dark'
   }
 }
