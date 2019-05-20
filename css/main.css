@@ -11,6 +11,9 @@ html.dark {
   --disabled-color: #555;
   background-color: #1a1a1a;
 }
+html.dark a {
+  color: turquoise;
+}
 * {
   transition: background 0.5s;
 }
