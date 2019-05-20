@@ -1,4 +1,4 @@
-/* global Blob Worker alert */
+/* global Blob Worker alert localStorage */
 
 let jsWorker
 let wasmWorker
@@ -148,5 +148,21 @@ function removePosClasses (...els) {
     el.classList.remove('pos-right-2')
     el.classList.remove('pos-left-1')
     el.classList.remove('pos-left-2')
+  }
+}
+
+document.body.addEventListener('keypress', function (e) {
+  let activeElement = document.activeElement
+  if (e.key === 'd' && !(activeElement.tagName.toLowerCase() === 'input' && activeElement.type.toLowerCase() === 'text')) toggleDarkMode(true)
+}, true)
+
+function toggleDarkMode () {
+  let html = $('html')
+  if (html.classList.contains('dark')) {
+    html.classList.remove('dark')
+    localStorage['darkMode'] = false
+  } else {
+    html.classList.add('dark')
+    localStorage['darkMode'] = true
   }
 }

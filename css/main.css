@@ -5,6 +5,15 @@
   --bg-color: white;
   --disabled-color: #ccc;
 }
+html.dark {
+  --primary-color: white;
+  --bg-color: #1a1a1a;
+  --disabled-color: #555;
+  background-color: #1a1a1a;
+}
+* {
+  transition: background 0.5s;
+}
 body {
   text-align: center;
   font-family: "Arimo", "Helvetica Neue", sans-serif;
