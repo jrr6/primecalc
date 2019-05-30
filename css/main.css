@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+:root {
+  --primary-color: #1a1a1a;
+  --bg-color: white;
+  --disabled-color: #ccc;
+}
+html.dark {
+  --primary-color: white;
+  --bg-color: #1a1a1a;
+  --disabled-color: #555;
+  background-color: #1a1a1a;
+}
+html.dark a {
+  color: turquoise;
+}
+* {
+  transition: background 0.5s;
+}
+body {
+  text-align: center;
+  font-family: "Arimo", "Helvetica Neue", sans-serif;
+  color: var(--primary-color);
+}
+.center {
+  text-align: center;
+}
+#settings-button {
+  display: inline-block;
+  font-size: 2em;
+  margin-left: 4.2rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+#settings-button i {
+  transition: transform 0.25s ease-in-out;
+}
+#settings-button:hover i {
+  transform: rotate(20deg);
+}
+#settings-button.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+#settings-button.disabled i {
+  color: var(--disabled-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+#list-container {
+  width: 95vw !important;
+  text-align: justify;
+  margin: 0 auto;
+  line-height: 1.15;
+}
+
+code {
+  background: rgb(240, 240, 240);
+  font-size: inherit;
+}
