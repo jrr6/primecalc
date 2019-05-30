@@ -11,7 +11,7 @@ script:
   - docker exec -it emscripten emcc -O3 primes.c -o js/wasmprimes.js -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]' -s ALLOW_MEMORY_GROWTH=1
 
 before_deploy:
-  - rm -rf .vscode/ experiments/ .gitignore .travis.yml *.md *.c
+  - rm -rf .vscode/ experiments/ .gitignore .gitattributes .travis.yml *.md *.c
 deploy:
   provider: pages
   skip_cleanup: true
